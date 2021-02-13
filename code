@@ -1,0 +1,279 @@
+# -*- coding: utf-8 -*-
+# script bonjour.py
+from tkinter import *
+
+
+def calcul():
+    velin = int(entry1.get())
+    x = velin * 10000
+    label3.config(text=str(x))
+
+    velin_vent = int(entry3.get())
+    velin_feux = int(entry4.get())
+    velin_eau = int(entry5.get())
+    x3 = (velin_vent + velin_feux + velin_eau) * 10000
+    label7.config(text=str(x3))
+
+    pierres = int(entry2.get())
+    x1 = pierres // 50
+    x2 = x1 * 10000
+    label5.config(text=str(x2));
+
+    velinleg = int(entry6.get())
+    piecesleg = int(entry8.get())
+    x4 = (velinleg + (piecesleg // 50)) * 50000
+    label9.config(text=str(x4))
+
+    velinl_d = int(entry7.get())
+    piecel_d = int(entry9.get())
+    x5 = (velinl_d + (piecel_d //100) )* 10000
+    label11.config(text=str(x5))
+
+    velinl_spe = int(entry11.get())
+    prix_vl_spe = int(entry10.get())
+    x7 = velinl_spe * prix_vl_spe
+    label19.config(text=str(x7))
+
+
+    x6 = (x5 + x4 + x3 + x2 + x + x7)
+    label12.config(text=str(x6))
+
+
+
+
+# Création de la fenêtre principale (main window)
+fenetre = Tk()
+fenetre.iconbitmap('ico_tete_de_delzor.ico')
+fenetre.title('calculer sa summon')
+fenetre.geometry('920x480')
+fenetre.resizable(0,0)
+
+# titre centrale
+label1= Label(fenetre, text='combien va te couter ta summon en mana', relief=GROOVE)
+label1.place(x = 240,y = 10)
+
+
+
+
+#partie pour les velins mystique
+#titre qui demande ce que tu dois mettre ici LES VELINS MYSTIQUE
+label2= Label(fenetre, text='combien as-tu de vélins mystiques', relief=GROOVE)
+label2.place(x = 5,y = 40)
+
+# nombre de VL que tu as
+variable1 = int
+entry1 = Entry(fenetre, textvariable=variable1, width=29)
+entry1.insert(END, '0')
+entry1.place(x = 5,y = 60)
+
+# le resultats pour les VL
+label3= Label(fenetre, width=43 , text = "de mana")
+label3.place(x = 5,y = 80)
+
+
+
+#partie pour les pierres
+#titre qui demande ce que tu dois mettre ici LES  pierres
+label4= Label(fenetre, text='combien as-tu de pierres', relief=GROOVE)
+label4.place(x = 200,y = 40)
+
+# nombre de pierre que tu as
+variable2 = int
+entry2 = Entry(fenetre, textvariable=variable2, width=21)
+entry2.insert(END, '0')
+entry2.place(x = 200,y = 60)
+
+# le resultats pour les pierres
+label5= Label(fenetre, width=28 , text = "de mana")
+label5.place(x = 200,y = 80)
+
+
+#partie velin d'atribut
+#titre qui demande ce que tu dois mettre ici LES  velins d'atribut
+label6= Label(fenetre, text='combien as-tu de velins d atribut vent' , relief=GROOVE)
+label6.place(x = 350,y = 40)
+
+# nombre de velin de feux que tu as
+variable3 = int
+entry3 = Entry(fenetre, textvariable=variable3, width=27)
+entry3.insert(END, '0')
+entry3.place(x = 350,y = 60)
+
+label7= Label(fenetre, text='combien as-tu de velins d atribut feux' , relief=GROOVE)
+label7.place(x = 350,y = 80)
+
+# nombre de velin d'eau que tu as
+variable4 = int
+entry4 = Entry(fenetre, textvariable=variable4, width=27)
+entry4.insert(END, '0')
+entry4.place(x = 350,y = 100)
+
+label8= Label(fenetre, text='combien as-tu de velins d atribut d eau' , relief=GROOVE)
+label8.place(x = 350,y = 120)
+
+# nombre de velin que tu as
+variable5 = int
+entry5 = Entry(fenetre, textvariable=variable5, width=27)
+entry5.insert(END, '0')
+entry5.place(x = 350,y = 140)
+
+
+# le resultats pour les velins
+label7= Label(fenetre, width=28 , text = "de mana")
+label7.place(x = 350,y = 160)
+
+
+
+#partie pour les velins legendaires
+#titre qui demande ce que tu dois mettre ici LES VELINS legendaires
+label8= Label(fenetre, text='combien as-tu de vélins legendaires', relief=GROOVE)
+label8.place(x = 5,y = 190)
+
+# nombre de VL que tu as
+variable6 = int
+entry6 = Entry(fenetre, textvariable=variable6, width=32)
+entry6.insert(END, '0')
+entry6.place(x = 5,y = 210)
+
+
+#titre qui demande ce que tu dois mettre ici LES pieces de VELINS legendaires
+label8= Label(fenetre, text='combien as-tu de pièces  légendaires' , relief=GROOVE)
+label8.place(x = 5,y = 230)
+
+# nombre de pieces L que tu as
+variable8 = int
+entry8 = Entry(fenetre, textvariable=variable8, width=32)
+entry8.insert(END, '0')
+entry8.place(x = 5,y = 250)
+
+# le resultats pour les VL
+label9= Label(fenetre, width=32 , text = "de mana")
+label9.place(x = 5,y = 270)
+
+
+
+
+
+
+
+
+
+
+
+
+
+#partie pour les velins L&D
+#titre qui demande ce que tu dois mettre ici LES VELINS L&D
+label10= Label(fenetre, text='combien as-tu de vélins L&D', relief=GROOVE)
+label10.place(x = 350,y = 190)
+
+# nombre de VL L&D que tu as
+variable7 = int
+entry7 = Entry(fenetre, textvariable=variable7, width=25 )
+entry7.insert(END, '0')
+entry7.place(x = 350,y = 210)
+
+
+#titre qui demande ce que tu dois mettre ici LES pieces de VELINS L&D
+label8= Label(fenetre, text='combien de as-tu pièces  L&D' , relief=GROOVE)
+label8.place(x = 350,y = 230)
+
+# nombre de pieces L que tu as
+variable8 = int
+entry9 = Entry(fenetre, textvariable=variable8, width=25)
+entry9.insert(END, '0')
+entry9.place(x = 350,y = 250)
+
+# le resultats pour les VL
+label11= Label(fenetre, width=32 , text = "de mana")
+label11.place(x = 350,y = 270)
+
+
+
+
+
+
+
+
+#partie pour les velins spe
+#titre qui demande ce que tu dois mettre ici LES VELINS spe
+label17= Label(fenetre, text='combien as-tu de vélins spé', relief=GROOVE)
+label17.place(x = 750,y = 40)
+
+# nombre de VL spé que tu as
+variable8 = int
+entry11 = Entry(fenetre, textvariable=variable8, width=25 )
+entry11.insert(END, '0')
+entry11.place(x = 750,y = 60)
+
+#titre qui demande ce que tu dois mettre ici Le prix du vl spé
+label18= Label(fenetre, text='combien coûte les Velins spé' , relief=GROOVE)
+label18.place(x = 750,y = 80)
+
+# prix des vl Spé
+variable9 = int
+entry10 = Entry(fenetre, textvariable=variable9, width=25)
+entry10.insert(END, '0')
+entry10.place(x = 750,y = 100)
+
+# le resultats pour les VL spé
+label19= Label(fenetre, width=32 , text = "de mana")
+label19.place(x = 750,y = 120)
+
+
+
+
+
+
+
+
+
+
+
+#les placements des images
+#image d'un velin mystique
+photo = PhotoImage(file = "Canv.png")
+label12 = Label(fenetre, image = photo).place(x = 5, y = 80)
+
+#image des pierres
+photo1 = PhotoImage(file = "pierre.png")
+label13 = Label(fenetre, image = photo1).place(x = 200, y = 80)
+
+#image  vl atribut
+photo2 = PhotoImage(file = "vlatribut.png")
+label14 = Label(fenetre, image = photo2).place(x = 580, y = 35)
+
+#image  legendaire
+photo3 = PhotoImage(file = "leg.png")
+label15 = Label(fenetre, image = photo3).place(x = 210, y = 185)
+
+#image  d&l
+photo4 = PhotoImage(file = "d&l.png")
+label16 = Label(fenetre, image = photo4).place(x = 530, y = 185)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# le resultats total
+label12= Label(fenetre, width=32 , text = "de mana")
+label12.place(x = 260,y = 330)
+
+#boutton valider et afficher les resultats
+boutoncalule = Button(fenetre , text='calcul' , relief=GROOVE , command=calcul, width = 10 , height = 5)
+boutoncalule.place(x = 330 , y = 360)
+fenetre.mainloop()
